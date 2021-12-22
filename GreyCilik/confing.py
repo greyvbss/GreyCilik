@@ -1,5 +1,5 @@
 from envparse import env
-from PrimeMega import LOGGER
+from GreyCilik import LOGGER
 
 DEFAULTS = {
     "LOAD_MODULES": True,
