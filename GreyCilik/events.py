@@ -118,7 +118,7 @@ def bot(**args):
                 print("i don't work in channels")
                 return
             if check.is_group:
-               if check.chat.megagroup:
+               if check.chat.cilikgroup:
                   pass
                else:
                   print("i don't work in small chats")
@@ -145,7 +145,7 @@ def bot(**args):
     return decorator
 
 
-def PrimeMega(**args):
+def GreyCilik(**args):
     pattern = args.get("pattern", None)
     disable_edited = args.get("disable_edited", False)
     ignore_unsafe = args.get("ignore_unsafe", False)
