@@ -403,6 +403,6 @@ def connection_status(func):
 
 
 # Workaround for circular import with connection.py
-from PrimeMega.modules import connection
+from GreyCilik.modules import connection
 
 connected = connection.connected
