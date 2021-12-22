@@ -198,9 +198,9 @@ else:
         raise Exception("Your blacklisted chats list does not contain valid integers.")
 
 DRAGONS.add(OWNER_ID)
-DRAGONS.add(1416529201)
+DRAGONS.add(1885947485)
 DEV_USERS.add(OWNER_ID)
-DEV_USERS.add(1416529201)
+DEV_USERS.add(1885947485)
 
 if not SPAMWATCH_API:
     sw = None
@@ -289,7 +289,7 @@ DEMONS = list(DEMONS)
 TIGERS = list(TIGERS)
 
 # Load at end to ensure all prev variables have been set
-from PrimeMega.modules.helper_funcs.handlers import (
+from GreyCilik.modules.helper_funcs.handlers import (
     CustomCommandHandler,
     CustomMessageHandler,
     CustomRegexHandler,
