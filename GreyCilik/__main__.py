@@ -6,12 +6,12 @@ import time
 import re
 import sys
 import traceback
-import PrimeMega.modules.sql.users_sql as sql
+import GreyCilik.modules.sql.users_sql as sql
 from sys import argv
 from typing import Optional
 from telegram import __version__ as peler
 from platform import python_version as memek
-from PrimeMega import (
+from GreyCilik import (
     ALLOW_EXCL,
     CERT_PATH,
     DONATION_LINK,
@@ -32,9 +32,9 @@ from PrimeMega import (
 
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-from PrimeMega.modules import ALL_MODULES
-from PrimeMega.modules.helper_funcs.chat_status import is_user_admin
-from PrimeMega.modules.helper_funcs.misc import paginate_modules
+from GreyCilik.modules import ALL_MODULES
+from GreyCilik.modules.helper_funcs.chat_status import is_user_admin
+from GreyCilik.modules.helper_funcs.misc import paginate_modules
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import (
     BadRequest,
@@ -81,10 +81,10 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
- ───「[Prime Mega](https://t.me/PrimeMegaBot)」───
+ ───「[Grey Cilik](https://t.me/GreyCilikBot)」───
 *Hello {} !*
 ────────────────────────
-PrimeMega a powerful group management bot built to help you manage your group!
+GreyCilik a powerful group management bot built to help you manage your group!
 ────────────────────
 Hit the /help or tap on button to se available command on me.
 """
@@ -92,11 +92,11 @@ Hit the /help or tap on button to se available command on me.
 buttons = [
         [
         InlineKeyboardButton(
-            text="➕️ Add Prime Mega to your group ➕️", url="t.me/PrimeMegaBot?startgroup=true"
+            text="➕️ Add Grey Cilik to your group ➕️", url="t.me/GreyCilikBot?startgroup=true"
         ),
     ],
     [
-        InlineKeyboardButton(text="About", callback_data="prime_"
+        InlineKeyboardButton(text="About", callback_data="Grey_"
         ),
         InlineKeyboardButton(
             text="TryInline", switch_inline_query_current_chat=""
@@ -112,10 +112,10 @@ buttons = [
 HELP_STRINGS = """
 Click on the button bellow to get description about specifics command."""
 
-PRIME_IMG = "https://telegra.ph/file/b9fa4e1360d0a872a3cd5.jpg"
+GREY_IMG = "https://telegra.ph/file/b9fa4e1360d0a872a3cd5.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
- You can support the project by contacting @Bukan_guudlooking \
+ You can support the project by contacting @greyvbss \
  Supporting isnt always financial! \
  Those who cannot provide monetary support are welcome to help us develop the bot at ."""
 
@@ -130,7 +130,7 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("PrimeMega.modules." + module_name)
+    imported_module = importlib.import_module("GreyCilik.modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
 
@@ -231,7 +231,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_text(
-            f"<b>Hi I'm Prime Mega!</b>\n<b>Started working since:</b> <code>{uptime}</code>",
+            f"<b>Hi I'm Grey Cilik!</b>\n<b>Started working since:</b> <code>{uptime}</code>",
             parse_mode=ParseMode.HTML
        )
 
@@ -360,39 +360,39 @@ def help_button(update, context):
 
 def prime_about_callback(update, context):
     query = update.callback_query
-    if query.data == "prime_":
+    if query.data == "grey_":
         query.message.edit_text(
-            text="๏ I'm *Prime Mega*, a powerful group management bot built to help you manage your group easily."
+            text="๏ I'm *Grey Cilik*, a powerful group management bot built to help you manage your group easily."
             "\n• I can restrict users."
             "\n• I can greet users with customizable welcome messages and even set a group's rules."
             "\n• I have an advanced anti-flood system."
             "\n• I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc."
             "\n• I have a note keeping system, blacklists, and even predetermined replies on certain keywords."
             "\n• I check for admins' permissions before executing any command and more stuffs"
-            "\n\n_PrimeMega's licensed under the GNU General Public License v3.0_"
-            "\n\n Click on button bellow to get basic help for PrimeMega.",
+            "\n\n_GreyCilik's licensed under the GNU General Public License v3.0_"
+            "\n\n Click on button bellow to get basic help for GreyCilik.",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Admins", callback_data="prime_admin"),
-                    InlineKeyboardButton(text="Notes", callback_data="prime_notes"),
+                    InlineKeyboardButton(text="Admins", callback_data="grey_admin"),
+                    InlineKeyboardButton(text="Notes", callback_data="grey_notes"),
                  ],
                  [
-                    InlineKeyboardButton(text="Support", callback_data="prime_support"),
-                    InlineKeyboardButton(text="Credits", callback_data="prime_credit"),
+                    InlineKeyboardButton(text="Support", callback_data="grey_support"),
+                    InlineKeyboardButton(text="Credits", callback_data="grey_credit"),
                  ],
                  [
                     InlineKeyboardButton(text="Musicplayer", callback_data="source_"),
                  ],
                  [
-                    InlineKeyboardButton(text="Go Back", callback_data="prime_back"),
+                    InlineKeyboardButton(text="Go Back", callback_data="grey_back"),
                  ]
                 ]
             ),
         )
-    elif query.data == "prime_back":
+    elif query.data == "grey_back":
         first_name = update.effective_user.first_name
         uptime = get_readable_time((time.time() - StartTime))
         query.message.edit_text(
@@ -407,10 +407,10 @@ def prime_about_callback(update, context):
                 disable_web_page_preview=True,
         )
 
-    elif query.data == "prime_admin":
+    elif query.data == "grey_admin":
         query.message.edit_text(
             text=f"*๏ Let's make your group bit effective now*"
-            "\nCongragulations, Prime Mega now ready to manage your group."
+            "\nCongragulations, Grey Cilik now ready to manage your group."
             "\n\n*Admin Tools*"
             "\nBasic Admin tools help you to protect and powerup your group."
             "\nYou can ban members, Kick members, Promote someone as admin through commands of bot."
@@ -420,11 +420,11 @@ def prime_about_callback(update, context):
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Go Back", callback_data="prime_")]]
+                [[InlineKeyboardButton(text="Go Back", callback_data="grey_")]]
             ),
         )
 
-    elif query.data == "prime_notes":
+    elif query.data == "grey_notes":
         query.message.edit_text(
             text=f"<b>๏ Setting up notes</b>"
             f"\nYou can save message/media/audio or anything as notes"
@@ -432,22 +432,22 @@ def prime_about_callback(update, context):
             f"\n\nYou can also set buttons for notes and filters (refer help menu)",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Go Back", callback_data="prime_")]]
+                [[InlineKeyboardButton(text="Go Back", callback_data="grey_")]]
             ),
         )
-    elif query.data == "prime_support":
+    elif query.data == "grey_support":
         query.message.edit_text(
-            text="*๏ PrimeMega support chats*"
-            "\nJoin My Support Group/Channel for see or report a problem on PrimeMega.",
+            text="*๏ GreyCilik support chats*"
+            "\nJoin My Support Group/Channel for see or report a problem on GreyCilik.",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Support", url="t.me/PrimeSupportGroup"),
-                    InlineKeyboardButton(text="Updates", url="https://t.me/PrimeSupportChannel"),
+                    InlineKeyboardButton(text="Support", url="t.me/GreySupportGroup"),
+                    InlineKeyboardButton(text="Updates", url="https://t.me/GreySupportChannel"),
                  ],
                  [
-                    InlineKeyboardButton(text="Go Back", callback_data="prime_"),
+                    InlineKeyboardButton(text="Go Back", callback_data="grey_"),
                  
                  ]
                 ]
@@ -455,19 +455,18 @@ def prime_about_callback(update, context):
         )
 
 
-    elif query.data == "prime_credit":
+    elif query.data == "grey_credit":
         query.message.edit_text(
-            text=f"<b>๏ Credis for primeMega</b>\n"
-            f"\nHere Developers Making The PrimeMegaRobot",
+            text=f"<b>๏ Credis for greyCilik</b>\n"
+            f"\nHere Developers Making The GreyCilikRobot",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Tonic", url="t.me/Bukan_guudlooking"),
-                    InlineKeyboardButton(text="x~b", url="t.me/Xbarok"),
+                    InlineKeyboardButton(text="Grey", url="t.me/greyvbss")
                  ],
                  [
-                    InlineKeyboardButton(text="Go Back", callback_data="prime_"),
+                    InlineKeyboardButton(text="Go Back", callback_data="grey_"),
                  
                  ]
                 ]
@@ -500,7 +499,7 @@ def Source_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Go Back", callback_data="prime_")
+                    InlineKeyboardButton(text="Go Back", callback_data="grey_")
                  ]
                 ]
             ),
@@ -791,7 +790,7 @@ def main():
         try:
             dispatcher.bot.sendMessage(
                 f"@{SUPPORT_CHAT}", 
-                f"""**PrimeMega Robot Started!**
+                f"""**Grey Cilik Started!**
 
 **Python:** `{memek()}`
 **Telegram Library:** `v{peler}`""",
@@ -818,7 +817,7 @@ def main():
     )
 
     about_callback_handler = CallbackQueryHandler(
-        prime_about_callback, pattern=r"prime_", run_async=True
+        prime_about_callback, pattern=r"grey_", run_async=True
     )
 
     source_callback_handler = CallbackQueryHandler(
