@@ -121,7 +121,7 @@ if ENV:
         raise Exception("Your blacklisted chats list does not contain valid integers.")
 
 else:
-    from PrimeMega.config import Development as Config
+    from GreyCilik.config import Development as Config
 
     TOKEN = Config.TOKEN
 
