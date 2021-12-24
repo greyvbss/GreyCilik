@@ -39,7 +39,7 @@ async def isPreviewUp(preview: str) -> bool:
 async def paste_func(_, message):
     if not message.reply_to_message:
         return await message.reply_text(
-            "Reply To A Message With /paste"
+            "Reply To A Meessage With /paste"
         )
     m = await message.reply_text("Pasting...")
     if message.reply_to_message.text:
