@@ -19,7 +19,7 @@ from telegram.utils.helpers import mention_html, mention_markdown, escape_markdo
 def add_nsfw(update: Update, context: CallbackContext):
     chat = update.effective_chat
     msg = update.effective_message
-    user = update.effective_user #Remodified by @EverythingSuckz
+    user = update.effective_user #Remodified by @EvrythingSuckz
     is_nsfw = sql.is_nsfw(chat.id)
     if not is_nsfw:
         sql.set_nsfw(chat.id)
