@@ -12,7 +12,7 @@ from GreyCilik.modules.helper_funcs.chat_status import user_admin
 from GreyCilik.modules.helper_funcs.alternate import typing_action
 
 # from GreyCilik.modules.rules import get_rules
-import PrimeMega.modules.sql.rules_sql as rulessql
+import GreyCilik.modules.sql.rules_sql as rulessql
 
 # from GreyCilik.modules.sql import warns_sql as warnssql
 import GreyCilik.modules.sql.blacklist_sql as blacklistsql
@@ -330,7 +330,7 @@ def export_data(update, context):
         },
     }
     baccinfo = json.dumps(backup, indent=4)
-    with open("Prime Mega{}.backup".format(chat_id), "w") as f:
+    with open("Grey Cilik{}.backup".format(chat_id), "w") as f:
         f.write(str(baccinfo))
     context.bot.sendChatAction(current_chat_id, "upload_document")
     tgl = time.strftime("%H:%M:%S - %d/%m/%Y", time.localtime(time.time()))
@@ -348,8 +348,8 @@ def export_data(update, context):
         pass
     context.bot.sendDocument(
         current_chat_id,
-        document=open("Prime Mega{}.backup".format(chat_id), "rb"),
-        caption="*Successfully Exported backup:*\nChat: `{}`\nChat ID: `{}`\nOn: `{}`\n\nNote: This `Prime Mega-Backup` was specially made for notes.".format(
+        document=open("Grey Cilik{}.backup".format(chat_id), "rb"),
+        caption="*Successfully Exported backup:*\nChat: `{}`\nChat ID: `{}`\nOn: `{}`\n\nNote: This `Grey Cilik-Backup` was specially made for notes.".format(
             chat.title,
             chat_id,
             tgl,
@@ -358,7 +358,7 @@ def export_data(update, context):
         reply_to_message_id=msg.message_id,
         parse_mode=ParseMode.MARKDOWN,
     )
-    os.remove("Prime Mega{}.backup".format(chat_id))  # Cleaning file
+    os.remove("Grey Cilik{}.backup".format(chat_id))  # Cleaning file
 
 
 # Temporary data
