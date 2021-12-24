@@ -13,10 +13,10 @@ async def _(event):
            return
     kontol = await event.reply("`Processing tiny...`")
     ik = await tbot.download_media(reply)
-    im1 = Image.open("GreyCilik/resources/Prime.png")
+    im1 = Image.open("GreyCilik/resources/Grey.png")
     if ik.endswith(".tgs"):
         await tbot.download_media(reply, "Grey.tgs")
-        os.system("lottie_convert.py Prime.tgs json.json")
+        os.system("lottie_convert.py Grey.tgs json.json")
         json = open("json.json", "r")
         jsn = json.read()
         jsn = jsn.replace("512", "2000")
