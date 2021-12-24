@@ -28,10 +28,11 @@ This Bot is Created by Grey Cilik, If your kanging this without fork at least gi
 
 ### Contributors
 - [『TØNIC』 乂 ₭ILLΣR](https://github.com/Tonic990) : Prime Devs
-- 
+- [SAYA SENDIRI :V ](https://github.com/grey423) : Grey Cilik Devs 
 
 ### Credit
 - Cutiepii
 - Skyzu Robot
 - Emiko Robot
 - Natsunagi Nagisa
+- Robot Robotan
