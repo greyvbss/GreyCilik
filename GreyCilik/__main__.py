@@ -81,7 +81,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
- ───「[Grey Cilik](https://t.me/GreyCilikBot)」───
+ ───「[Grey Cilik](https://t.me/GreyCilikbot)」───
 *Hello {} !*
 ────────────────────────
 GreyCilik a powerful group management bot built to help you manage your group!
@@ -92,11 +92,11 @@ Hit the /help or tap on button to se available command on me.
 buttons = [
         [
         InlineKeyboardButton(
-            text="➕️ Add Grey Cilik to your group ➕️", url="t.me/GreyCilikBot?startgroup=true"
+            text="➕️ Add Grey Cilik to your group ➕️", url="t.me/GreyCilikbot?startgroup=true"
         ),
     ],
     [
-        InlineKeyboardButton(text="About", callback_data="Grey_"
+        InlineKeyboardButton(text="About", callback_data="grey_"
         ),
         InlineKeyboardButton(
             text="TryInline", switch_inline_query_current_chat=""
@@ -112,7 +112,7 @@ buttons = [
 HELP_STRINGS = """
 Click on the button bellow to get description about specifics command."""
 
-GREY_IMG = "https://telegra.ph/file/b9fa4e1360d0a872a3cd5.jpg"
+GREY_IMG = "https://telegra.ph/file/09f3f39dd43de5b66d538.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
  You can support the project by contacting @greyvbss \
@@ -362,7 +362,7 @@ def prime_about_callback(update, context):
     query = update.callback_query
     if query.data == "grey_":
         query.message.edit_text(
-            text="๏ I'm *Grey Cilik*, a powerful group management bot built to help you manage your group easily."
+            text="๏ I'm *GreyCilik*, a powerful group management bot built to help you manage your group easily."
             "\n• I can restrict users."
             "\n• I can greet users with customizable welcome messages and even set a group's rules."
             "\n• I have an advanced anti-flood system."
@@ -420,7 +420,7 @@ def prime_about_callback(update, context):
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Go Back", callback_data="grey_")]]
+                [[InlineKeyboardButton(text="Go Back", callback_data="prime_")]]
             ),
         )
 
@@ -432,7 +432,7 @@ def prime_about_callback(update, context):
             f"\n\nYou can also set buttons for notes and filters (refer help menu)",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Go Back", callback_data="grey_")]]
+                [[InlineKeyboardButton(text="Go Back", callback_data="prime_")]]
             ),
         )
     elif query.data == "grey_support":
@@ -443,8 +443,8 @@ def prime_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Support", url="t.me/GreySupportGroup"),
-                    InlineKeyboardButton(text="Updates", url="https://t.me/GreySupportChannel"),
+                    InlineKeyboardButton(text="Support", url="t.me/greynihsupport"),
+                    InlineKeyboardButton(text="Updates", url="https://t.me/greyupdate"),
                  ],
                  [
                     InlineKeyboardButton(text="Go Back", callback_data="grey_"),
@@ -463,7 +463,8 @@ def prime_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Grey", url="t.me/greyvbss")
+                    InlineKeyboardButton(text="Grey", url="t.me/greyvbss"),
+                    InlineKeyboardButton(text="x~b", url="t.me/Xbarok"),
                  ],
                  [
                     InlineKeyboardButton(text="Go Back", callback_data="grey_"),
@@ -741,7 +742,7 @@ def donate(update: Update, context: CallbackContext):
             DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True
         )
 
-        if OWNER_ID != 1606221784:
+        if OWNER_ID != 1885947485:
             update.effective_message.reply_text(
                 "I'm free for everyone ❤️ If you wanna make me smile, just join"
                 "[My Channel]({})".format(DONATION_LINK),
@@ -790,7 +791,7 @@ def main():
         try:
             dispatcher.bot.sendMessage(
                 f"@{SUPPORT_CHAT}", 
-                f"""**Grey Cilik Started!**
+                f"""**Grey Cilik Robot Started!**
 
 **Python:** `{memek()}`
 **Telegram Library:** `v{peler}`""",
@@ -817,7 +818,7 @@ def main():
     )
 
     about_callback_handler = CallbackQueryHandler(
-        prime_about_callback, pattern=r"grey_", run_async=True
+        prime_about_callback, pattern=r"prime_", run_async=True
     )
 
     source_callback_handler = CallbackQueryHandler(
