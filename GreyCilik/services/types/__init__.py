@@ -1,1 +1,1 @@
-from .InlineQueryResult import InlineQueryResultAudio, InlineQueryResultCachedDocument
+frrom .InlineQueryResult import InlineQueryResultAudio, InlineQueryResultCachedDocument
