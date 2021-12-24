@@ -420,7 +420,7 @@ def prime_about_callback(update, context):
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Go Back", callback_data="prime_")]]
+                [[InlineKeyboardButton(text="Go Back", callback_data="grey_")]]
             ),
         )
 
@@ -432,7 +432,7 @@ def prime_about_callback(update, context):
             f"\n\nYou can also set buttons for notes and filters (refer help menu)",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Go Back", callback_data="prime_")]]
+                [[InlineKeyboardButton(text="Go Back", callback_data="grey_")]]
             ),
         )
     elif query.data == "grey_support":
@@ -818,7 +818,7 @@ def main():
     )
 
     about_callback_handler = CallbackQueryHandler(
-        prime_about_callback, pattern=r"prime_", run_async=True
+        grey_about_callback, pattern=r"grey_", run_async=True
     )
 
     source_callback_handler = CallbackQueryHandler(
