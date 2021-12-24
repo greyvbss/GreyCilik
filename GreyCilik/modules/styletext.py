@@ -1,4 +1,4 @@
-from GreyCilik  import dispatcher
+from GreyCilik import dispatcher
 from GreyCilik.modules.disable import DisableAbleCommandHandler
 from GreyCilik.modules.helper_funcs.alternate import typing_action
 from telegram import ParseMode
