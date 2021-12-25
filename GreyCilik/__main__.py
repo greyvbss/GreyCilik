@@ -94,7 +94,7 @@ buttons = [
         InlineKeyboardButton(text="ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅ​", callback_data="help_back"),
     ],
     [
-        InlineKeyboardButton(text="ᴀʙᴏᴜᴛ", callback_data="grey_"),
+        InlineKeyboardButton(text="ᴀʙᴏᴜᴛ", callback_data="Skyzu_"),
         InlineKeyboardButton(text="ᴛʀʏ ɪɴʟɪɴᴇ​", switch_inline_query_current_chat=""),
     ],
     [
@@ -117,7 +117,7 @@ Click on the button bellow to get description about specifics command."""
 EMI_IMG = "https://telegra.ph/file/f0bf616fe7323dd1f3aa8.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
- You can support the project by contacting @greyvbss \
+ You can support the project by contacting @skyzu \
  Supporting isnt always financial! \
  Those who cannot provide monetary support are welcome to help us develop the bot at ."""
 
@@ -240,7 +240,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_text(
-            f"<b>Hi I'm Grey Cilik!</b>\n<b>Started working since:</b> <code>{uptime}</code>",
+            f"<b>Hi I'm Skyzu robot!</b>\n<b>Started working since:</b> <code>{uptime}</code>",
             parse_mode=ParseMode.HTML,
         )
 
@@ -367,11 +367,11 @@ def help_button(update, context):
         pass
 
 
-def grey_about_callback(update, context):
+def Skyzu_about_callback(update, context):
     query = update.callback_query
-    if query.data == "grey_":
+    if query.data == "Skyzu_":
         query.message.edit_text(
-            text="๏ I'm *GreyCilik*, a powerful group management bot built to help you manage your group easily."
+            text="๏ I'm *Grey*, a powerful group management bot built to help you manage your group easily."
             "\n• I can restrict users."
             "\n• I can greet users with customizable welcome messages and even set a group's rules."
             "\n• I have an advanced anti-flood system."
@@ -379,25 +379,25 @@ def grey_about_callback(update, context):
             "\n• I have a note keeping system, blacklists, and even predetermined replies on certain keywords."
             "\n• I check for admins' permissions before executing any command and more stuffs"
             "\n\n_Grey's licensed under the GNU General Public License v3.0_"
-            "\n\n Click on button bellow to get basic help for GreyCilik.",
+            "\n\n Click on button bellow to get basic help for SkyzuRobot.",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text="ᴀᴅᴍɪɴs​", callback_data="grey_admin"
+                            text="ᴀᴅᴍɪɴs​", callback_data="Skyzu_admin"
                         ),
                         InlineKeyboardButton(
-                            text="ɴᴏᴛᴇs​", callback_data="grey_notes"
+                            text="ɴᴏᴛᴇs​", callback_data="Skyzu_notes"
                         ),
                     ],
                     [
                         InlineKeyboardButton(
-                            text="sᴜᴘᴘᴏʀᴛ​", callback_data="grey_support"
+                            text="sᴜᴘᴘᴏʀᴛ​", callback_data="Skyzu_support"
                         ),
                         InlineKeyboardButton(
-                            text="ᴄʀᴇᴅɪᴛs​", callback_data="grey_credit"
+                            text="ᴄʀᴇᴅɪᴛs​", callback_data="Skyzu_credit"
                         ),
                     ],
                     [
@@ -407,13 +407,13 @@ def grey_about_callback(update, context):
                     ],
                     [
                         InlineKeyboardButton(
-                            text="ɢᴏ ʙᴀᴄᴋ​", callback_data="grey_back"
+                            text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Skyzu_back"
                         ),
                     ],
                 ]
             ),
         )
-    elif query.data == "grey_back":
+    elif query.data == "Skyzu_back":
         first_name = update.effective_user.first_name
         uptime = get_readable_time((time.time() - StartTime))
         query.message.edit_text(
@@ -429,7 +429,7 @@ def grey_about_callback(update, context):
             disable_web_page_preview=True,
         )
 
-    elif query.data == "grey_admin":
+    elif query.data == "Skyzu_admin":
         query.message.edit_text(
             text=f"*๏ Let's make your group bit effective now*"
             f"\nCongragulations, {dispatcher.bot.first_name} now ready to manage your group."
@@ -442,11 +442,11 @@ def grey_about_callback(update, context):
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="grey_")]]
+                [[InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Skyzu_")]]
             ),
         )
 
-    elif query.data == "grey_notes":
+    elif query.data == "Skyzu_notes":
         query.message.edit_text(
             text=f"<b>๏ Setting up notes</b>"
             f"\nYou can save message/media/audio or anything as notes"
@@ -454,10 +454,10 @@ def grey_about_callback(update, context):
             f"\n\nYou can also set buttons for notes and filters (refer help menu)",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="grey_")]]
+                [[InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Skyzu_")]]
             ),
         )
-    elif query.data == "grey_support":
+    elif query.data == "Skyzu_support":
         query.message.edit_text(
             text=f"*๏ {dispatcher.bot.first_name} support chats*"
             "\nJoin My Support Group/Channel for see or report a problem on Grey.",
@@ -471,13 +471,13 @@ def grey_about_callback(update, context):
                         ),
                     ],
                     [
-                        InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="grey_"),
+                        InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Skyzu_"),
                     ],
                 ]
             ),
         )
 
-    elif query.data == "grey_credit":
+    elif query.data == "Skyzu_credit":
         query.message.edit_text(
             text=f"<b>๏ Credis for Grey</b>\n"
             f"\nHere Developers Making The GreyCilik",
@@ -488,7 +488,7 @@ def grey_about_callback(update, context):
                         InlineKeyboardButton(text="Grey", url="t.me/greyvbss"),
                     ],
                     [
-                        InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="grey_"),
+                        InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Skyzu_"),
                     ],
                 ]
             ),
@@ -513,7 +513,7 @@ def Source_about_callback(update, context):
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="grey_")]]
+                [[InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Skyzu_")]]
             ),
         )
     elif query.data == "source_back":
@@ -831,7 +831,7 @@ def main():
     )
 
     about_callback_handler = CallbackQueryHandler(
-        grey_about_callback, pattern=r"grey_", run_async=True
+        Skyzu_about_callback, pattern=r"Skyzu_", run_async=True
     )
 
     source_callback_handler = CallbackQueryHandler(
