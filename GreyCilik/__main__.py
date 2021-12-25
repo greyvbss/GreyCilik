@@ -81,38 +81,40 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
- ───「[Grey Cilik](https://t.me/GreyCilikbot)」───
 *Hello {} !*
 ────────────────────────
-Grey Cilik a powerful group management bot built to help you manage your group!
-────────────────────
-Hit the /help or tap on button to se available command on me.
+✪ I'm an anime theme bot designed to help manage your telegram group with a lot features.
+✪ Maintained by @greyvbss ✨
+────────────────────────
+Hit the /help to see available command.
 """
 
 buttons = [
-        [
-        InlineKeyboardButton(
-            text="➕️ Add Grey Cilik to your group ➕️", url="t.me/GreyCilikbot?startgroup=true"
-        ),
+    [
+        InlineKeyboardButton(text="ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅ​", callback_data="help_back"),
     ],
     [
-        InlineKeyboardButton(text="About", callback_data="grey_"
-        ),
-        InlineKeyboardButton(
-            text="TryInline", switch_inline_query_current_chat=""
-        ),
+        InlineKeyboardButton(text="ᴀʙᴏᴜᴛ", callback_data="grey_"),
+        InlineKeyboardButton(text="ᴛʀʏ ɪɴʟɪɴᴇ​", switch_inline_query_current_chat=""),
     ],
     [
-        InlineKeyboardButton(text="Help & Commands❔", callback_data="help_back"
+        InlineKeyboardButton(
+            text="ᴏᴡɴᴇʀ​", url="https://t.me/greyvbss"
+        ),
+        InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ​", url=f"https://t.me/{SUPPORT_CHAT}"),
+    ],
+    [
+        InlineKeyboardButton(
+            text="➗ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ​ ➗",
+            url=f"t.me/{dispatcher.bot.username}?startgroup=new",
         ),
     ],
 ]
 
-
 HELP_STRINGS = """
 Click on the button bellow to get description about specifics command."""
 
-GREY_IMG = "https://telegra.ph/file/09f3f39dd43de5b66d538.jpg"
+EMI_IMG = "https://telegra.ph/file/f0bf616fe7323dd1f3aa8.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
  You can support the project by contacting @greyvbss \
@@ -200,7 +202,13 @@ def start(update: Update, context: CallbackContext):
                     update.effective_chat.id,
                     HELPABLE[mod].__help__,
                     InlineKeyboardMarkup(
-                        [[InlineKeyboardButton(text="Go Back", callback_data="help_back")]]
+                        [
+                            [
+                                InlineKeyboardButton(
+                                    text="Go Back", callback_data="help_back"
+                                )
+                            ]
+                        ]
                     ),
                 )
 
@@ -223,7 +231,8 @@ def start(update: Update, context: CallbackContext):
                     escape_markdown(first_name),
                     escape_markdown(uptime),
                     sql.num_users(),
-                    sql.num_chats()),                        
+                    sql.num_chats(),
+                ),
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
@@ -232,8 +241,8 @@ def start(update: Update, context: CallbackContext):
     else:
         update.effective_message.reply_text(
             f"<b>Hi I'm Grey Cilik!</b>\n<b>Started working since:</b> <code>{uptime}</code>",
-            parse_mode=ParseMode.HTML
-       )
+            parse_mode=ParseMode.HTML,
+        )
 
 
 def error_handler(update, context):
@@ -362,33 +371,45 @@ def grey_about_callback(update, context):
     query = update.callback_query
     if query.data == "grey_":
         query.message.edit_text(
-            text="๏ I'm *Grey Cilik*, a powerful group management bot built to help you manage your group easily."
+            text="๏ I'm *GreyCilik*, a powerful group management bot built to help you manage your group easily."
             "\n• I can restrict users."
             "\n• I can greet users with customizable welcome messages and even set a group's rules."
             "\n• I have an advanced anti-flood system."
             "\n• I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc."
             "\n• I have a note keeping system, blacklists, and even predetermined replies on certain keywords."
             "\n• I check for admins' permissions before executing any command and more stuffs"
-            "\n\n_GreyCilik's licensed under the GNU General Public License v3.0_"
+            "\n\n_Grey's licensed under the GNU General Public License v3.0_"
             "\n\n Click on button bellow to get basic help for GreyCilik.",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
-                 [
-                    InlineKeyboardButton(text="Admins", callback_data="grey_admin"),
-                    InlineKeyboardButton(text="Notes", callback_data="grey_notes"),
-                 ],
-                 [
-                    InlineKeyboardButton(text="Support", callback_data="grey_support"),
-                    InlineKeyboardButton(text="Credits", callback_data="grey_credit"),
-                 ],
-                 [
-                    InlineKeyboardButton(text="Musicplayer", callback_data="source_"),
-                 ],
-                 [
-                    InlineKeyboardButton(text="Go Back", callback_data="grey_back"),
-                 ]
+                    [
+                        InlineKeyboardButton(
+                            text="ᴀᴅᴍɪɴs​", callback_data="grey_admin"
+                        ),
+                        InlineKeyboardButton(
+                            text="ɴᴏᴛᴇs​", callback_data="grey_notes"
+                        ),
+                    ],
+                    [
+                        InlineKeyboardButton(
+                            text="sᴜᴘᴘᴏʀᴛ​", callback_data="grey_support"
+                        ),
+                        InlineKeyboardButton(
+                            text="ᴄʀᴇᴅɪᴛs​", callback_data="grey_credit"
+                        ),
+                    ],
+                    [
+                        InlineKeyboardButton(
+                            text="ᴍᴜsɪᴄᴘʟᴀʏᴇʀ​", callback_data="source_"
+                        ),
+                    ],
+                    [
+                        InlineKeyboardButton(
+                            text="ɢᴏ ʙᴀᴄᴋ​", callback_data="grey_back"
+                        ),
+                    ],
                 ]
             ),
         )
@@ -396,21 +417,22 @@ def grey_about_callback(update, context):
         first_name = update.effective_user.first_name
         uptime = get_readable_time((time.time() - StartTime))
         query.message.edit_text(
-                PM_START_TEXT.format(
-                    escape_markdown(first_name),
-                    escape_markdown(uptime),
-                    sql.num_users(),
-                    sql.num_chats()),
-                reply_markup=InlineKeyboardMarkup(buttons),
-                parse_mode=ParseMode.MARKDOWN,
-                timeout=60,
-                disable_web_page_preview=True,
+            PM_START_TEXT.format(
+                escape_markdown(first_name),
+                escape_markdown(uptime),
+                sql.num_users(),
+                sql.num_chats(),
+            ),
+            reply_markup=InlineKeyboardMarkup(buttons),
+            parse_mode=ParseMode.MARKDOWN,
+            timeout=60,
+            disable_web_page_preview=True,
         )
 
     elif query.data == "grey_admin":
         query.message.edit_text(
             text=f"*๏ Let's make your group bit effective now*"
-            "\nCongragulations, Grey Cilik now ready to manage your group."
+            f"\nCongragulations, {dispatcher.bot.first_name} now ready to manage your group."
             "\n\n*Admin Tools*"
             "\nBasic Admin tools help you to protect and powerup your group."
             "\nYou can ban members, Kick members, Promote someone as admin through commands of bot."
@@ -420,7 +442,7 @@ def grey_about_callback(update, context):
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Go Back", callback_data="grey_")]]
+                [[InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="grey_")]]
             ),
         )
 
@@ -432,47 +454,46 @@ def grey_about_callback(update, context):
             f"\n\nYou can also set buttons for notes and filters (refer help menu)",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Go Back", callback_data="grey_")]]
+                [[InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="grey_")]]
             ),
         )
     elif query.data == "grey_support":
         query.message.edit_text(
-            text="*๏ GreyCilik support chats*"
-            "\nJoin My Support Group/Channel for see or report a problem on GreyCilik.",
+            text=f"*๏ {dispatcher.bot.first_name} support chats*"
+            "\nJoin My Support Group/Channel for see or report a problem on Grey.",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
-                 [
-                    InlineKeyboardButton(text="Support", url="t.me/greynihsupport"),
-                    InlineKeyboardButton(text="Updates", url="https://t.me/greyupdate"),
-                 ],
-                 [
-                    InlineKeyboardButton(text="Go Back", callback_data="grey_"),
-                 
-                 ]
+                    [
+                        InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ​", url="t.me/greynihsupport"),
+                        InlineKeyboardButton(
+                            text="ᴜᴘᴅᴀᴛᴇs​", url="https://t.me/greyupdate"
+                        ),
+                    ],
+                    [
+                        InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="grey_"),
+                    ],
                 ]
             ),
         )
-
 
     elif query.data == "grey_credit":
         query.message.edit_text(
-            text=f"<b>๏ Credis for greyCilik</b>\n"
-            f"\nHere Developers Making The GreyCilikRobot",
+            text=f"<b>๏ Credis for Grey</b>\n"
+            f"\nHere Developers Making The GreyCilik",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [
-                 [
-                    InlineKeyboardButton(text="Grey", url="t.me/greyvbss"),
-                    InlineKeyboardButton(text="x~b", url="t.me/Xbarok"),
-                 ],
-                 [
-                    InlineKeyboardButton(text="Go Back", callback_data="grey_"),
-                 
-                 ]
+                    [
+                        InlineKeyboardButton(text="Grey", url="t.me/greyvbss"),
+                    ],
+                    [
+                        InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="grey_"),
+                    ],
                 ]
             ),
         )
+
 
 def Source_about_callback(update, context):
     query = update.callback_query
@@ -481,43 +502,35 @@ def Source_about_callback(update, context):
             text="๏›› This advance command for Musicplayer."
             "\n\n๏ Command for admins only."
             "\n • `/reload` - For refreshing the adminlist."
-            "\n • `/userbotjoin` - For inviting the assistant to your groups."
-            "\n • `/userbotleave` - Use this if you want the assistant leaving your groups."
             "\n • `/pause` - To pause the playback."
-            "\n • `/vpause` - To pause video stream."
             "\n • `/resume` - To resuming the playback You've paused."
-            "\n • `/vresume` - To resuming video stream."
             "\n • `/skip` - To skipping the player."
-            "\n • `/vskip` - To skipping the video stream."
             "\n • `/end` - For end the playback."
-            "\n • `/vend` - For end the video stream."
             "\n • `/musicplayer <on/off>` - Toggle for turn ON or turn OFF the musicplayer."
             "\n\n๏ Command for all members."
-            "\n • `/play` or `/ytp` <query> - Playing music via YouTube."
-            "\n • `/vplay` <query or reply audio> - Playing video from YouTube.",
+            "\n • `/play` <query /reply audio> - Playing music via YouTube."
+            "\n • `/playlist` - To playing a playlist of groups or your personal playlist",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [
-                 [
-                    InlineKeyboardButton(text="Go Back", callback_data="grey_")
-                 ]
-                ]
+                [[InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="grey_")]]
             ),
         )
     elif query.data == "source_back":
         first_name = update.effective_user.first_name
         query.message.edit_text(
-                PM_START_TEXT.format(
-                    escape_markdown(first_name),
-                    escape_markdown(uptime),
-                    sql.num_users(),
-                    sql.num_chats()),
-                reply_markup=InlineKeyboardMarkup(buttons),
-                parse_mode=ParseMode.MARKDOWN,
-                timeout=60,
-                disable_web_page_preview=True,
+            PM_START_TEXT.format(
+                escape_markdown(first_name),
+                escape_markdown(uptime),
+                sql.num_users(),
+                sql.num_chats(),
+            ),
+            reply_markup=InlineKeyboardMarkup(buttons),
+            parse_mode=ParseMode.MARKDOWN,
+            timeout=60,
+            disable_web_page_preview=True,
         )
+
 
 def get_help(update: Update, context: CallbackContext):
     chat = update.effective_chat  # type: Optional[Chat]
@@ -549,7 +562,7 @@ def get_help(update: Update, context: CallbackContext):
                 [
                     [
                         InlineKeyboardButton(
-                            text="Help & Command ❓",
+                            text="ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅ​",
                             url="t.me/{}?start=help".format(context.bot.username),
                         )
                     ]
@@ -570,7 +583,7 @@ def get_help(update: Update, context: CallbackContext):
             chat.id,
             text,
             InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Go Back", callback_data="help_back")]]
+                [[InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="help_back")]]
             ),
         )
 
@@ -642,7 +655,7 @@ def settings_button(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text="Go Back",
+                                text="ɢᴏ ʙᴀᴄᴋ​",
                                 callback_data="stngs_back({})".format(chat_id),
                             )
                         ]
@@ -717,7 +730,7 @@ def get_settings(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text="Settings",
+                                text="sᴇᴛᴛɪɴɢs​",
                                 url="t.me/{}?start=stngs_{}".format(
                                     context.bot.username, chat.id
                                 ),
@@ -790,12 +803,12 @@ def main():
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
             dispatcher.bot.sendMessage(
-                f"@{SUPPORT_CHAT}", 
+                f"@{SUPPORT_CHAT}",
                 f"""**Grey Cilik Started!**
 
 **Python:** `{memek()}`
 **Telegram Library:** `v{peler}`""",
-                parse_mode=ParseMode.MARKDOWN
+                parse_mode=ParseMode.MARKDOWN,
             )
         except Unauthorized:
             LOGGER.warning(
