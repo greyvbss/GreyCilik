@@ -84,7 +84,7 @@ PM_START_TEXT = """
  ───「[Grey Cilik](https://t.me/GreyCilikbot)」───
 *Hello {} !*
 ────────────────────────
-GreyCilik a powerful group management bot built to help you manage your group!
+Grey Cilik a powerful group management bot built to help you manage your group!
 ────────────────────
 Hit the /help or tap on button to se available command on me.
 """
@@ -103,7 +103,7 @@ buttons = [
         ),
     ],
     [
-        InlineKeyboardButton(text="Help & Commands❔", callback_data="grey_"
+        InlineKeyboardButton(text="Help & Commands❔", callback_data="help_back"
         ),
     ],
 ]
@@ -387,7 +387,7 @@ def grey_about_callback(update, context):
                     InlineKeyboardButton(text="Musicplayer", callback_data="source_"),
                  ],
                  [
-                    InlineKeyboardButton(text="Go Back", callback_data="help_back"),
+                    InlineKeyboardButton(text="Go Back", callback_data="grey_back"),
                  ]
                 ]
             ),
@@ -791,7 +791,7 @@ def main():
         try:
             dispatcher.bot.sendMessage(
                 f"@{SUPPORT_CHAT}", 
-                f"""**Grey Cilik Robot Started!**
+                f"""**Grey Cilik Started!**
 
 **Python:** `{memek()}`
 **Telegram Library:** `v{peler}`""",
