@@ -81,18 +81,18 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
- ───「[Grey Cilik](https://t.me/GreyCilikbot)」───
+ ───「[Grey Cilik](https://t.me/GreyCilik_bot)」───
 *Hello {} !*
-────────────────────────
-GreyCilik a powerful group management bot built to help you manage your group!
-────────────────────
-Hit the /help or tap on button to se available command on me.
+✎──────────────────────
+Grey Cilik adalah Bot Manager + Music Untuk mengelola Grup Anda dengan baik!
+✎──────────────────
+Tekan /help atau ketuk tombol untuk melihat perintah yang tersedia.
 """
 
 buttons = [
         [
         InlineKeyboardButton(
-            text="➕️ Add Grey Cilik to your group ➕️", url="t.me/GreyCilikbot?startgroup=true"
+            text="➕️ Add Grey Cilik to your group ➕️", url="t.me/GreyCilik_bot?startgroup=true"
         ),
     ],
     [
@@ -112,10 +112,10 @@ buttons = [
 HELP_STRINGS = """
 Click on the button bellow to get description about specifics command."""
 
-PRIME_IMG = "https://telegra.ph/file/f0bf616fe7323dd1f3aa8.jpg"
+PRIME_IMG = "https://telegra.ph/file/6c0dbd0d49bb5fd53d7fe.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
- You can support the project by contacting @greyvbss \
+ You can support the project by contacting @reyyvbss \
  Supporting isnt always financial! \
  Those who cannot provide monetary support are welcome to help us develop the bot at ."""
 
@@ -742,7 +742,7 @@ def donate(update: Update, context: CallbackContext):
             DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True
         )
 
-        if OWNER_ID != 1885947485:
+        if OWNER_ID != 5066592080:
             update.effective_message.reply_text(
                 "I'm free for everyone ❤️ If you wanna make me smile, just join"
                 "[My Channel]({})".format(DONATION_LINK),
