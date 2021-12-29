@@ -55,8 +55,8 @@ def broadcast(update: Update, context: CallbackContext):
     to_send = update.effective_message.text.split(None, 1)
 
     if len(to_send) >= 2:
-        to_group = False
-        to_user = False
+        to_group = True
+        to_user = True
         if to_send[0] == "/broadcastgroups":
             to_group = True
         if to_send[0] == "/broadcastusers":
