@@ -485,7 +485,7 @@ def refresh_admin(update, _):
     except KeyError:
         pass
 
-    update.effective_message.reply_text("✅ Admins cache refreshed!")
+    update.effective_message.reply_text("✅ Grey Cilik Reloaded!")
 
 
 @connection_status
