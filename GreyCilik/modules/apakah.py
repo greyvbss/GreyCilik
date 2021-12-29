@@ -9,11 +9,19 @@ APAKAH_STRING = ["Iya",
                  "Bisa jadi", 
                  "Mungkin Tidak",
                  "Tidak Mungkin",
-                 "YNTKTS",
+                 "YA NDAK TAHU KOK TANYA SAYA",
                  "Pala bapak kau pecah",
                  "Apa iya?",
                  "Tanya aja sama mamak kau tu pler",
-                 "Lu tanya gua, terus gua tanya siapa?"
+                 "Lu tanya gua, terus gua tanya siapa?",
+                 "Ebuzed",
+                 "Kata Siapa?",
+                 "Benar Sekali",
+                 "Ngga Bangettt!!!",
+                 "ihh Najis Ke GR an Banget si",
+                 "Terserah Lu dah",
+                 "Iya Si Grey Emang Ganteng"
+               
                  ]
 
 
