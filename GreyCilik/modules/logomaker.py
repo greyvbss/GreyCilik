@@ -63,17 +63,17 @@ async def logo_gen(event):
     else:
         pics = []
         async for i in ubot2.iter_messages(
-            "@GreyLogoPack", filter=InputMessagesFilterPhotos
+            "@PrimeLogoPack", filter=InputMessagesFilterPhotos
         ):
             pics.append(i)
         id_ = random.choice(pics)
         bg_ = await id_.download_media()
-        fpath_ = glob.glob("./PrimeMega/resources/fonts/*")
+        fpath_ = glob.glob("./GreyCilik/resources/fonts/*")
         font_ = random.choice(fpath_)
     if not bg_:
         pics = []
         async for i in ubot2.iter_messages(
-            "@GreyLogoPack", filter=InputMessagesFilterPhotos
+            "@PrimeLogopack", filter=InputMessagesFilterPhotos
         ):
             pics.append(i)
         id_ = random.choice(pics)
@@ -113,7 +113,7 @@ async def logo_gen(event):
         await tbot.send_file(
             event.chat_id,
             file=flnme,
-            caption="Logo by [ɢʀᴇʏ ᴄɪʟɪᴋ](https://t.me/GreyCilikbot)",
+            caption="Logo by [Grey Cililk](https://t.me/GreyCilik_bot)",
             force_document=False,
         )
         os.remove(flnme)
@@ -121,7 +121,7 @@ async def logo_gen(event):
     if os.path.exists(bg_):
         os.remove(bg_) 
     if os.path.exists(font_):
-        if not font_.startswith("./PrimeMega/resources/fonts"):
+        if not font_.startswith("./GreyCilik/resources/fonts"):
             os.remove(font_)
 
 
@@ -146,7 +146,7 @@ async def logo_(event):
     else:
         pics = []
         async for i in ubot2.iter_messages(
-            "@GreyLogoPack", filter=InputMessagesFilterPhotos
+            "@Primelogopack", filter=InputMessagesFilterPhotos
         ):
             pics.append(i)
         id_ = random.choice(pics)
@@ -156,7 +156,7 @@ async def logo_(event):
     if not bg_:
         pics = []
         async for i in ubot2.iter_messages(
-            "@GreyLogoPack", filter=InputMessagesFilterPhotos
+            "@Primelogopack", filter=InputMessagesFilterPhotos
         ):
             pics.append(i)
         id_ = random.choice(pics)
@@ -196,7 +196,7 @@ async def logo_(event):
         await tbot.send_file(
             event.chat_id,
             file=flnme,
-            caption="Logo by [ɢʀᴇʏ ᴄɪʟɪᴋ](https://t.me/GreyCilikbot)",
+            caption="Logo by [Grey Cilik](https://t.me/GreyCilik_bot)",
             force_document=False,
         )
         os.remove(flnme)
