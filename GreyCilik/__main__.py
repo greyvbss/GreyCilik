@@ -410,7 +410,7 @@ def prime_about_callback(update, context):
     elif query.data == "prime_admin":
         query.message.edit_text(
             text=f"*๏ Let's make your group bit effective now*"
-            "\nCongragulations, Prime Mega now ready to manage your group."
+            "\nCongragulations, Grey Cilik now ready to manage your group."
             "\n\n*Admin Tools*"
             "\nBasic Admin tools help you to protect and powerup your group."
             "\nYou can ban members, Kick members, Promote someone as admin through commands of bot."
@@ -443,8 +443,8 @@ def prime_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Support", url="t.me/greynihsupport"),
-                    InlineKeyboardButton(text="Updates", url="https://t.me/greyupdate"),
+                    InlineKeyboardButton(text="Support", url="t.me/CilikSupport"),
+                    InlineKeyboardButton(text="Updates", url="https://t.me/CilikProject"),
                  ],
                  [
                     InlineKeyboardButton(text="Go Back", callback_data="prime_"),
@@ -457,14 +457,14 @@ def prime_about_callback(update, context):
 
     elif query.data == "prime_credit":
         query.message.edit_text(
-            text=f"<b>๏ Credis for primeMega</b>\n"
-            f"\nHere Developers Making The GreyCilik",
+            text=f"<b>๏ Credis for Grey Cilik</b>\n"
+            f"\nHere Developers Making The Grey Cilik",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
                     InlineKeyboardButton(text="Tonic", url="t.me/Bukan_guudlooking"),
-                    InlineKeyboardButton(text="Grey", url="t.me/greyvbss"),
+                    InlineKeyboardButton(text="Grey", url="t.me/reyyvbss"),
                  ],
                  [
                     InlineKeyboardButton(text="Go Back", callback_data="prime_"),
