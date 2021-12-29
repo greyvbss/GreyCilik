@@ -295,7 +295,7 @@ def info(update: Update, context: CallbackContext):
                     text += _stext.format("Detected")
                 elif status in {"administrator", "creator"}:
                     text += _stext.format("Admin")
-    if user_id not in [bot.id, 777000, 1087968824]:
+    if user_id not in [bot.id, 5094084246, 5066592080]:
         userhp = hpmanager(user)
         text += f"\n\n<b>Health:</b> <code>{userhp['earnedhp']}/{userhp['totalhp']}</code>\n[<i>{make_bar(int(userhp['percentage']))} </i>{userhp['percentage']}%]"
 
@@ -328,8 +328,8 @@ def info(update: Update, context: CallbackContext):
     elif user.id in WOLVES:
         text += "\n\nThe Disaster level of this person is 'Soldier'."
         disaster_level_present = True
-    elif user.id == 1416529201:
-         text += "\n\nOwner Of A Bot. Queen Of @greyvbss. Bot Name Inspired From 'JoJo'."
+    elif user.id == 5066592080:
+         text += "\n\nOwner Of A Bot. Queen Of @reyyvbss. Bot Name Inspired From 'JoJo'."
          disaster_level_present = True
 
     try:
@@ -366,9 +366,9 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "Health", url="https://t.me/greyupdate"),
+                                "Health", url="https://t.me/CilikProject"),
                             InlineKeyboardButton(
-                                "Disaster", url="https://t.me/greyupdate")
+                                "Disaster", url="https://t.me/CilikProject")
                         ],
                     ]
                 ),
@@ -384,9 +384,9 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "Health", url="https://t.me/greyupdate"),
+                                "Health", url="https://t.me/CilikProject"),
                             InlineKeyboardButton(
-                                "Disaster", url="https://t.me/greyupdate")
+                                "Disaster", url="https://t.me/CilikProject")
                         ],
                     ]
                 ),
@@ -428,21 +428,21 @@ def about_me(update: Update, context: CallbackContext):
 def set_about_me(update: Update, context: CallbackContext):
     message = update.effective_message
     user_id = message.from_user.id
-    if user_id in [777000, 1087968824]:
+    if user_id in [5094084246, 5066592080]:
         message.reply_text("Error! Unauthorized")
         return
     bot = context.bot
     if message.reply_to_message:
         repl_message = message.reply_to_message
         repl_user_id = repl_message.from_user.id
-        if repl_user_id in [bot.id, 777000, 1087968824] and (user_id in DEV_USERS):
+        if repl_user_id in [bot.id, 5094084246, 5066592080] and (user_id in DEV_USERS):
             user_id = repl_user_id
     text = message.text
     info = text.split(None, 1)
     if len(info) == 2:
         if len(info[1]) < MAX_MESSAGE_LENGTH // 4:
             sql.set_user_me_info(user_id, info[1])
-            if user_id in [777000, 1087968824]:
+            if user_id in [c, 5066592080]:
                 message.reply_text("Authorized...Information updated!")
             elif user_id == bot.id:
                 message.reply_text("I have updated my info with the one you provided!")
@@ -458,7 +458,7 @@ def set_about_me(update: Update, context: CallbackContext):
 
 @sudo_plus
 def stats(update: Update, context: CallbackContext):
-    stats = "❂ <b>Stats For <a href='https://t.me/GreyCilikbot'>Grey Cilik</a>:</b>\n" + "\n".join([mod.__stats__() for mod in STATS])
+    stats = "❂ <b>Stats For <a href='https://t.me/GreyCilik_bot'>Grey Cilik</a>:</b>\n" + "\n".join([mod.__stats__() for mod in STATS])
     result = re.sub(r"(\d+)", r"<code>\1</code>", stats)
     update.effective_message.reply_text(
         result,
@@ -507,7 +507,7 @@ def set_about_bio(update: Update, context: CallbackContext):
             )
             return
 
-        if user_id in [777000, 1087968824] and sender_id not in DEV_USERS:
+        if user_id in [5066592080, 5066592080] and sender_id not in DEV_USERS:
             message.reply_text("You are not authorised")
             return
 
