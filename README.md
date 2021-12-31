@@ -34,5 +34,6 @@ This Bot is Created by Grey Project, If your kanging this without fork at least 
 - Cutiepii
 - Skyzu Robot
 - Emiko Robot
+- Prime Mega
 - Natsunagi Nagisa
 - Robot Robotan
