@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://telegra.ph/file/09f3f39dd43de5b66d538.jpg">
+  <img src="https://telegra.ph/file/760e7c0afaf6ba3df8ce7.jpg">
 </p>
 
 <h4><p align="center"> GREY CILIK </p></h4>
