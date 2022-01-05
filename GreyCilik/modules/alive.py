@@ -13,12 +13,12 @@ PHOTO = "https://telegra.ph/file/760e7c0afaf6ba3df8ce7.jpg"
 
 @register(pattern=("/alive"))
 async def awake(event):
-  GREY = f"**Hai [{event.sender.first_name}](tg://user?id={event.sender.id}), Aku Grey Cilik.** \n\n"
-  GREY += "⚪ **Saya Akan Bekerja untuk Grup Anda** \n\n"
-  GREY += f"⚪ **Tuan Saya : [Lord](https://t.me/reyyvbss)** \n\n"
+  GREY = f"**Hi [{event.sender.first_name}](tg://user?id={event.sender.id}), I'm Grey Cilik.** \n\n"
+  GREY += "⚪ **I'm Working Properly** \n\n"
+  GREY += f"⚪ **My Master : [Lord](https://t.me/reyyvbss)** \n\n"
   GREY += f"⚪ **Library Version :** `{telever}` \n\n"
   GREY += f"⚪ **Telethon Version :** `{tlhver}` \n\n"
   GREY += f"⚪ **Pyrogram Version :** `{pyrover}` \n\n"
-  GREY += "**Terima Kasih Telah Menambahkan Saya Di Sini❤️**"
-  BUTTON = [[Button.url("ʜᴇʟᴘ​", "https://t.me/GreyCilik_bot?start=help"), Button.url("sᴜᴘᴘᴏʀᴛ​", "https://CilikSupport")]]
+  GREY += "**Thanks For Adding Me Here ❤️**"
+  BUTTON = [[Button.url("ʜᴇʟᴘ​", "https://t.me/GreyCilik_bot?start=help"), Button.url("sᴜᴘᴘᴏʀᴛ​", "https://t.me/CilikSupport")]]
   await tbot.send_file(event.chat_id, PHOTO, caption=GREY,  buttons=BUTTON)
