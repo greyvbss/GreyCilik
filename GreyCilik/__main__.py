@@ -115,7 +115,7 @@ Click on the button bellow to get description about specifics command."""
 PRIME_IMG = "https://telegra.ph/file/6c0dbd0d49bb5fd53d7fe.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
- You can support the project by contacting @reyyvbss \
+ You can support the project by contacting @greyyvbss \
  Supporting isnt always financial! \
  Those who cannot provide monetary support are welcome to help us develop the bot at ."""
 
@@ -464,7 +464,7 @@ def prime_about_callback(update, context):
                 [
                  [
                     InlineKeyboardButton(text="Tonic", url="t.me/Bukan_guudlooking"),
-                    InlineKeyboardButton(text="Grey", url="t.me/reyyvbss"),
+                    InlineKeyboardButton(text="Grey", url="t.me/greyyvbss"),
                  ],
                  [
                     InlineKeyboardButton(text="Go Back", callback_data="prime_"),
