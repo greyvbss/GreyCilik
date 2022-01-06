@@ -55,8 +55,8 @@ def broadcast(update: Update, context: CallbackContext):
     to_send = update.effective_message.text.split(None, 1)
 
     if len(to_send) >= 2:
-        to_group = True
-        to_user = True
+        to_group = False
+        to_user = False
         if to_send[0] == "/broadcastgroups":
             to_group = True
         if to_send[0] == "/broadcastusers":
@@ -153,7 +153,7 @@ def chat_checker(update: Update, context: CallbackContext):
 
 
 def __user_info__(user_id):
-    if user_id in [5094084246, 1784606556]:
+    if user_id in [777000, 1087968824]:
         return """╘═━「 Groups count: <code>???</code> 」"""
     if user_id == dispatcher.bot.id:
         return """╘═━「 Groups count: <code>???</code> 」"""
