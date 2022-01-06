@@ -430,7 +430,7 @@ def del_lockables(update, context):
                             )
                             return
 
-                        chat.kick_member(new_mem.id)
+                        chat.ban_member(new_mem.id)
                         send_message(
                             update.effective_message,
                             "Only admins are allowed to add bots in this chat! Get outta here.",
@@ -598,5 +598,5 @@ dispatcher.add_handler(LOCKTYPES_HANDLER)
 dispatcher.add_handler(LOCKED_HANDLER)
 
 dispatcher.add_handler(
-    MessageHandler(Filters.all & Filters.group, del_lockables), PERM_GROUP
+    MessageHandler(Filters.all & Filters.chat_type.groups, del_lockables), PERM_GROUP
 )
