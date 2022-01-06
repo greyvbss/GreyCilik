@@ -27,8 +27,8 @@ async def carbon_func(_, message):
 @pbot.on_message(filters.command("repo"))
 async def repo(_, message):
     await message.reply_text(
-        f"""✨ **Hey Saya Grey Cilik** 
-**Owner repo : [GREY](https://t.me/greyvbss)**
+        f"""✨ **Hey I'm Grey Cilik** 
+**Owner repo : [Grey](https://t.me/greyyvbss)**
 **Python Version :** `{y()}`
 **Library Version :** `{o}`
 **Telethon Version :** `{s}`
@@ -39,7 +39,7 @@ async def repo(_, message):
             [
                 [
                     InlineKeyboardButton("Repo", url="https://github.com/grey423/GreyCilik"), 
-                    InlineKeyboardButton("Support", url="https://t.me/greynihsupport")
+                    InlineKeyboardButton("Support", url="https://t.me/CilikSupport")
                 ]
             ]
         ),
