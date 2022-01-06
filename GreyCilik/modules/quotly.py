@@ -6,7 +6,7 @@ from pyrogram.types import Message
 
 from GreyCilik import arq
 from GreyCilik.utils.errors import capture_err
-from GreyCilik import pbot as ap
+from GreyCilik import pbot as app
 
 
 async def quotify(messages: list):
