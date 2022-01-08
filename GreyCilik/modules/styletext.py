@@ -32,6 +32,9 @@ linedfont = [
     "𝕒", "𝕓", "𝕔", "𝕕", "𝕖", "𝕗", "𝕘", "𝕙", "𝕚", "𝕛", "𝕜", "𝕝", "𝕞", "𝕟", "𝕠", "𝕡", "𝕢", "𝕣", "𝕤", "𝕥", "𝕦", "𝕧", "𝕨", "𝕩", "𝕪", "𝕫",
 ]
 
+cilikfont = [
+    "ᴀ", "ʙ", "ᴄ", "ᴅ", "ᴇ", "ꜰ", "ɢ", "ʜ", "ɪ", "ᴊ", "ᴋ", "ʟ", "ᴍ", "ɴ", "ᴏ", "ᴘ", "Q", "ʀ", "ꜱ", "ᴛ", "ᴜ", "ᴠ", "ᴡ", "x", "ʏ", "ᴢ",
+]
 
 @typing_action
 def weebify(update, context):
@@ -247,6 +250,33 @@ def lined(update, context):
         message.reply_to_message.reply_text(string)
     else:
         message.reply_text(string)
+        
+
+@typing_action
+def cilik(update, context):
+    args = context.args
+    message = update.effective_message
+    string = ""
+
+    if message.reply_to_message:
+        string = message.reply_to_message.text.lower().replace(" ", "  ")
+
+    if args:
+        string = "  ".join(args).lower()
+
+    if not string:
+        message.reply_text("Usage is `/cilik <text>`", parse_mode=ParseMode.MARKDOWN)
+        return
+
+    for normiecharacter in string:
+        if normiecharacter in normiefont:
+            cilikcharacter = cilikfont[normiefont.index(normiecharacter)]
+            string = string.replace(normiecharacter, cilikcharacter)
+
+    if message.reply_to_message:
+        message.reply_to_message.reply_text(string)
+    else:
+        message.reply_text(string)
 
 __mod_name__ = "Styletext"
 
@@ -258,6 +288,7 @@ FSQUARE_HANDLER = DisableAbleCommandHandler("fsquare", fsquare, run_async=True)
 BLUE_HANDLER = DisableAbleCommandHandler("blue", blue, run_async=True)
 LATIN_HANDLER = DisableAbleCommandHandler("latin", latin, run_async=True)
 LINED_HANDLER = DisableAbleCommandHandler("lined", lined, run_async=True)
+CILIK_HANDLER = DisableAbleCommandHandler("cilik", cilik, run_async=True)
 
 dispatcher.add_handler(WEEBIFY_HANDLER)
 dispatcher.add_handler(BUBBLE_HANDLER)
@@ -267,6 +298,7 @@ dispatcher.add_handler(FSQUARE_HANDLER)
 dispatcher.add_handler(BLUE_HANDLER)
 dispatcher.add_handler(LATIN_HANDLER)
 dispatcher.add_handler(LINED_HANDLER)
+dispatcher.add_handler(CILIK_HANDLER)
 
 __command_list__ = ["weebify"]
 __command_list__ = ["bubble"]
@@ -276,6 +308,7 @@ __command_list__ = ["fsquare"]
 __command_list__ = ["blue"]
 __command_list__ = ["latin"]
 __command_list__ = ["lined"]
+__command_list__ = ["cilik"]
 __handlers__ = [WEEBIFY_HANDLER]
 __handlers__ = [BUBBLE_HANDLER]
 __handlers__ = [FBUBBLE_HANDLER]
@@ -284,3 +317,5 @@ __handlers__ = [FSQUARE_HANDLER]
 __handlers__ = [BLUE_HANDLER]
 __handlers__ = [LATIN_HANDLER]
 __handlers__ = [LINED_HANDLER]
+__handlers__ = [CILIK_HANDLER]
+
