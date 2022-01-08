@@ -1,4 +1,4 @@
-import socketr
+import socket
 from asyncio import get_running_loop
 from functools import partial
 
