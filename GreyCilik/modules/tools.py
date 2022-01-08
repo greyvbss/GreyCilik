@@ -3,6 +3,8 @@ __mod_name__ = "Tools"
 __help__ = """
 *Sangmata Info bot*
 ❂ /sg <reply>*:* To check history name
+*Mention All*
+❂ /all or @all <text>*:* Mention All Members
 *Date-time-Weather*
 ❂ /time <country code>*:* Gives information about a timezone.
 ❂ /weather <city>*:* Get weather info in a particular place.
