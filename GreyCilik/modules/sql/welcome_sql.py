@@ -7,6 +7,9 @@ from GreyCilik.modules.sql import BASE, SESSION
 from sqlalchemy import Boolean, Column, Integer, String, UnicodeText
 from sqlalchemy.sql.sqltypes import BigInteger
 
+DEFAULT_WELCOME = "Hey {first}, Apa Kabar?"
+DEFAULT_GOODBYE = "Babayy 👋!"
+
 DEFAULT_WELCOME_MESSAGES = [
     "{first} is here!",  # Discord welcome messages copied
     "Ready player {first}",
@@ -398,7 +401,7 @@ def get_welc_pref(chat_id):
             welc.welcome_type,
         )
     # Welcome by default.
-    return True, random.choice(DEFAULT_WELCOME_MESSAGES), None, Types.TEXT
+    return True, random.choice(DEFAULT_WELCOME), None, Types.TEXT
 
 
 def get_gdbye_pref(chat_id):
@@ -407,7 +410,7 @@ def get_gdbye_pref(chat_id):
     if welc:
         return welc.should_goodbye, welc.custom_leave, welc.leave_type
     # Welcome by default.
-    return True, random.choice(DEFAULT_GOODBYE_MESSAGES), Types.TEXT
+    return True, random.choice(DEFAULT_GOODBYE), Types.TEXT
 
 
 def set_clean_welcome(chat_id, clean_welcome):
@@ -477,7 +480,7 @@ def set_custom_welcome(
             welcome_settings.welcome_type = welcome_type.value
 
         else:
-            welcome_settings.custom_welcome = random.choice(DEFAULT_WELCOME_MESSAGES)
+            welcome_settings.custom_welcome = random.choice(DEFAULT_WELCOME)
             welcome_settings.welcome_type = Types.TEXT.value
 
         SESSION.add(welcome_settings)
@@ -500,7 +503,7 @@ def set_custom_welcome(
 
 def get_custom_welcome(chat_id):
     welcome_settings = SESSION.query(Welcome).get(str(chat_id))
-    ret = random.choice(DEFAULT_WELCOME_MESSAGES)
+    ret = random.choice(DEFAULT_WELCOME)
     if welcome_settings and welcome_settings.custom_welcome:
         ret = welcome_settings.custom_welcome
 
@@ -522,7 +525,7 @@ def set_custom_gdbye(chat_id, custom_goodbye, goodbye_type, buttons=None):
             welcome_settings.leave_type = goodbye_type.value
 
         else:
-            welcome_settings.custom_leave = random.choice(DEFAULT_GOODBYE_MESSAGES)
+            welcome_settings.custom_leave = random.choice(DEFAULT_GOODBYE)
             welcome_settings.leave_type = Types.TEXT.value
 
         SESSION.add(welcome_settings)
@@ -545,7 +548,7 @@ def set_custom_gdbye(chat_id, custom_goodbye, goodbye_type, buttons=None):
 
 def get_custom_gdbye(chat_id):
     welcome_settings = SESSION.query(Welcome).get(str(chat_id))
-    ret = random.choice(DEFAULT_GOODBYE_MESSAGES)
+    ret = random.choice(DEFAULT_GOODBYE)
     if welcome_settings and welcome_settings.custom_leave:
         ret = welcome_settings.custom_leave
 
