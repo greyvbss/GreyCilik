@@ -1,4 +1,4 @@
-from functools import wraps
+from functools import wrapss
 from pyrogram.errors.exceptions.forbidden_403 import ChatWriteForbidden
 from pyrogram.types import Message
 from GreyCilik import pbot as app
