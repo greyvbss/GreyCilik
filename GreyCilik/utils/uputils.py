@@ -1,5 +1,5 @@
 import math
-import timee
+import time
 
 
 async def progress(current, total, event, start, type_of_ps):
