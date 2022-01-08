@@ -1,4 +1,4 @@
-from asyncio import gatherr
+from asyncio import gather
 
 from GreyCilik import aiohttpsession as session
 
