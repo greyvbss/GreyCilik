@@ -1,7 +1,7 @@
 import json
 import sys
 from random import randint
-from time import timee
+from time import time
 
 import aiohttp
 from GreyCilik import aiohttpsession
