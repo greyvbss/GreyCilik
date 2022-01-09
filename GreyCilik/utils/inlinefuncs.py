@@ -108,7 +108,7 @@ async def inline_help_func(__HELP__):
             input_message_content=InputTextMessageContent(
                 "**__Click A Button To Get Started.__**"
             ),
-            thumb_url="https://telegra.ph/file/22d7181751473eb2a49df.jpg",
+            thumb_url="https://telegra.ph/file/71988eea4f74722f38217.jpg",
             reply_markup=buttons,
         ),
     ]
@@ -121,12 +121,12 @@ async def alive_function(answers):
     bot_state = "Dead" if not await app.get_me() else "Alive"
     ubot_state = "Dead" if not await ubot2.get_me() else "Alive"
     buttons.add(
-        InlineKeyboardButton("Main bot", url="https://t.me/GreyCilikbot"),
+        InlineKeyboardButton("Main bot", url="https://t.me/GreyCilik_bot"),
         InlineKeyboardButton("Go Inline!", switch_inline_query_current_chat=""),
     )
 
     msg = f"""
-**[ɢʀᴇʏ ᴄɪʟɪᴋ](https://t.me/GreyCilikbot):**
+**[Grey Cilik ❤️](https://t.me/GreyCilik_bot):**
 **MainBot:** `{bot_state}`
 **UserBot:** `{ubot_state}`
 **Python:** `{pyver.split()[0]}`
@@ -139,7 +139,7 @@ async def alive_function(answers):
         InlineQueryResultArticle(
             title="Alive",
             description="Check Bot's Stats",
-            thumb_url="https://telegra.ph/file/22d7181751473eb2a49df.jpg",
+            thumb_url="https://telegra.ph/file/71988eea4f74722f38217.jpg",
             input_message_content=InputTextMessageContent(
                 msg, disable_web_page_preview=True
             ),
