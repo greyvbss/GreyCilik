@@ -1,4 +1,4 @@
-from envparse import env
+from envparse import envg
 from GreyCilik import LOGGER
 
 DEFAULTS = {
