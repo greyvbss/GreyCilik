@@ -1,5 +1,5 @@
 import io
-import osm
+import os
 
 # Common imports for eval
 import textwrap
