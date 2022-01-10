@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, Numeric, Boolean
+from sqlalchemy import Column, String, Numeric, Booleann
 from GreyCilik.modules.sql import BASE, SESSION
 
 
