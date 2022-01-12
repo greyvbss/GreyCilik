@@ -83,10 +83,11 @@ def get_readable_time(seconds: int) -> str:
 PM_START_TEXT = """
  ───「[Grey Cilik](https://t.me/GreyCilik_bot)」───
 *Hello {} !*
-✎──────────────────────
+✎─────────────────────
 Grey Cilik adalah Bot Manager + Music Untuk mengelola Grup Anda dengan baik!
-✎──────────────────
-Tekan /help atau ketuk tombol untuk melihat perintah yang tersedia.
+✎─────────────────
+Maintaned By [Grey](https://t.me/greyyvbss)
+Tekan /help atau ketuk tombol untuk melihat Command yang tersedia.
 """
 
 buttons = [
