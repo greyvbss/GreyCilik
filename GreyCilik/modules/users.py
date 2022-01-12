@@ -1,4 +1,4 @@
-from io import BytesI
+from io import BytesIO
 from time import sleep
 
 from telegram import TelegramError, Update
