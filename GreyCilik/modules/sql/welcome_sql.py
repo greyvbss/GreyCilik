@@ -8,14 +8,12 @@ from sqlalchemy import Boolean, Column, Integer, String, UnicodeText
 from sqlalchemy.sql.sqltypes import BigInteger
 
 DEFAULT_WELCOME_MESSAGES = [
-    "Hayy {first} Apa Kabar ???",
-    "Hayy Selamat Datang {first}.",
-    "Welcome {first} Sukinep.",
+    "Hay {first} Apa Kabar ???",
+    "Hay {first} Selamat Datang di {chatname}!.",   
 ]
 DEFAULT_GOODBYE_MESSAGES = [
-    "Babayyy {first} Anjeng!!!",
     "Selamat Tinggal {first}.",
-    "Papayyy {first} 👋🏻",
+    "Babayy {first} 👋🏻",
 ]
 # Line 111 to 152 are references from https://bindingofisaac.fandom.com/wiki/Fortune_Telling_Machine
 
