@@ -603,6 +603,11 @@ musicplayer_help: |
     ──「 Musikplayer 」──
 
     Bantuan Musik dapat mengakses dengan perintah yang berbeda dan bantuan bantuan dan pengaturan dasbor dukungan.
+    ❂ /play <judul lagu> - untuk memutar lagu
+    ❂ /end - untuk menghentikan musik
+    ❂ /vplay <judul film/masukan link film> - untuk memutar video/stream
+    ❂ /vstop - untuk menghentikan video/stream
+    ❂ /lyrics <judul lagu> - untuk mencari lirik lagu
     ❂ /mhelp - untuk bantuan modul musik
     ❂ /msettings - untuk mengatur modul musik
 
@@ -657,7 +662,7 @@ search_help: |
     ❂ /github <username>*:* Dapatkan informasi tentang pengguna GitHub.
     ❂ /country <nama negara>*:* Mengumpulkan info tentang negara tertentu
     ❂ /imdb <Nama film>*:* Dapatkan info lengkap tentang film dengan imdb.com
-    ❂ Siesta <query>*:* Siesta menjawab pertanyaan
+    ❂ Cilik <query>*:* Siesta menjawab pertanyaan
 
     💡 Contoh : `Siesta di mana Jepang?`
 stickers_help: |
@@ -708,6 +713,7 @@ tools_help: |
 
     penanda
     ❂ /tagall : untuk tag semua orang minimal 100 member dulu.
+    ❂ /all <kata-kata> : Untuk mentag semua member
 translator_help: |
     ──「 Penerjemah 」──
 
