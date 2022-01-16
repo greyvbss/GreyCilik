@@ -9,33 +9,27 @@ set_chat_lang: "Great, using {} Language it is from now on!"
 
 # PM Text
 pm_start_text: |
-  *Hey Darling, {} ❤️*
-  ✪ I'm an anime-theme management robot [✨](https://telegra.ph/file/6d3e3ef24f64fb6e35df0.jpg)
-
-  ┏━━━━━━━━•❃°•°❀°•°❃•━━━━━━━━┓
-  × *Server Uptime :* `{}`
-  × `{}` *users, across* `{}` *chats.*
-  ┗━━━━━━━━•❃°•°❀°•°❃•━━━━━━━━┛
-
-  ✪ Hit /help to see my available commands.
+  *ʜᴇʟʟᴏ ɪ'ᴍ ɢʀᴇʏ ᴄɪʟɪᴋ*
+  ɢʀᴇʏ ᴄɪʟɪᴋ ɪꜱ ᴀ ʙᴏᴛ ᴍᴀɴᴀɢᴇʀ + ᴍᴜꜱɪᴄ ᴛᴏ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ.
+  ʜɪᴛ /help . ᴍᴀɪɴᴛᴀɴᴇᴅ ʙʏ [Grey](t.me/greyyvbss).
    
 group_start_text: |
-  *👋🏻 Hi Darling, I'm Siesta Robot!*
+  *👋🏻 Hi, I'm Grey Cilik!*
   
   *Started active since :* `{}`
 
 pm_about_text: |
-  ✺ Hey Darling I'm *Siesta Robot*, a powerful group management bot built to help you manage your group easily. ✺
+  ✺ Hey I'm *Grey Cilik*, a powerful group management bot built to help you manage your group easily. ✺
 
-  ✪ I can restrict users.
-  ✪ I can greet users with customizable welcome messages and even set a group's rules.
-  ✪ I have an advanced anti-flood system.
-  ✪ I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc.
-  ✪ I have a note keeping system, blacklists, and even predetermined replies on certain keywords.
-  ✪ I check for admins' permissions before executing any command and more stuffs
+  ✫ I can restrict users.
+  ✫ I can greet users with customizable welcome messages and even set a group's rules.
+  ✫ I have an advanced anti-flood system.
+  ✫ I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc.
+  ✫ I have a note keeping system, blacklists, and even predetermined replies on certain keywords.
+  ✫ I check for admins' permissions before executing any command and more stuffs
 
-  _Siesta's licensed under the GNU General Public License v3.0_
-  Click on button bellow to get basic help for Siesta Robot.
+  _GreyCilik's licensed under the GNU General Public License v3.0_
+  Click on button bellow to get basic help for Grey Cilik.
 pm_about_admin_text: |
   *✺ Let's make your group bit effective now ✺*
 
@@ -54,13 +48,13 @@ pm_about_notes_text: |
   ✪ You can save message/media/audio or anything as notes to get a note simply use # at the beginning of a word
   ✪ You can also set buttons for notes and filters (refer help menu)
 pm_about_support_text: |
-  *✺ Siesta Robot support chats ✺*
+  *✺ Grey Cilik support chats ✺*
 
-  Join My Support Group/Channel for see or report a problem on Siesta.
+  Join My Support Group/Channel for see or report a problem on Cilik.
 pm_about_credit_text: |
-  *✺ Credis for Siesta ✺*
-
-  Here Developers Making And Give Inspiration For Made The Siesta Robot
+  *✺ Credits for GreyCilik ✺
+ 
+ Here Developers Making And Give Inspiration For Made The Grey Cilik
 pm_help_text: |
   *✺ Click on the button bellow to get description about specifics command. ✺*
 pm_help_module_text: "Here is the help for the *{}* module :\n\n"
@@ -82,14 +76,14 @@ group_settings_text: "Click here to get this chat's settings, as well as yours."
 group_settings_button: "Settings"
 
 # PM Button
-add_bot_to_group_button: "♕ Add Me To Your Group ♕"
+add_bot_to_group_button: "➕️Add Me To Your Group➕️"
 support_chat_link_button: "Support"
 updates_channel_link_button: "Update"
 notes_button: "Notes"
 source_button: "Source Code"
 help_button: "Get Help"
 back_button: "Go back"
-about_button: "About Siesta Robot"
+about_button: "About Grey Cilik"
 inline_button: "Try inline!​​"
 
 # MODULES
@@ -344,7 +338,7 @@ fsub_feds_help: |
 
     *Force Subscribe:*
 
-    Siesta can mute members who are not subscribed your channel until they subscribe When enabled I will mute unsubscribed members and show them a unmute button. When they pressed the button I will unmute them
+    Cilik can mute members who are not subscribed your channel until they subscribe When enabled I will mute unsubscribed members and show them a unmute button. When they pressed the button I will unmute them
 
     *Setup* *:* *Only creator*
     ❂ Add me in your group as admin
@@ -471,6 +465,7 @@ fun_help: |
     ❂ /blue <text>: bluify your text!
     ❂ /latin <text>: latinify your text!
     ❂ /lined <text>: lined your text!
+    ❂ /cilik <text>: cilik your text!
 greetings_help: |
     ──「 Greetings 」──
 
