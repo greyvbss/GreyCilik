@@ -33,6 +33,7 @@ from GreyCilik.modules.helper_funcs.filters import CustomFilters
 from GreyCilik.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
 from GreyCilik import dispatcher, updater, SUPPORT_CHAT
 from GreyCilik.modules.log_channel import gloggable
+from GreyCilik.modules.language import gs
 
 
 @user_admin_no_reply
@@ -159,14 +160,8 @@ def list_all_chats(update: Update, context: CallbackContext):
     update.effective_message.reply_text(text, parse_mode="HTML")
 
 
-__help__ = """
-Chatbot utilizes the Kuki's api which allows Kuki to talk and provide a more interactive group chat experience.
-
-*Admins only Commands*:
-➢ `/Chatbot`*:* Shows chatbot control panel
-  
-*Powered by ItelAi*
-"""
+def helps(chat):
+    return gs(chat, "chatbot_help")
 
 __mod_name__ = "ChatBot"
 
