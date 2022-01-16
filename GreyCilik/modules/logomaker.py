@@ -5,6 +5,7 @@ from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.types import InputMessagesFilterPhotos
 from GreyCilik.events import register
 from GreyCilik import telethn as tbot, ubot2
+from GreyCilik.modules.language import gs
 
 
 def mediainfo(media):
@@ -291,12 +292,9 @@ async def logo_gen(event):
             os.remove(font_)
 
             
+def helps(chat):
+    return gs(chat, "logomarker_help")
+
+
 __mod_name__ = "Logomaker"
 
-__help__ = """ This is help menu for logomaker
-❂ /logo <text/name> - Create a logo with random view.
-❂ /wlogo <text/name> - Create a logo with wide view only.
- Image Editor :
-❂ /slogo <text/name> - Buat logo pake foto cewek
-❂  /edit <reply photo> - to edit image.
-"""
