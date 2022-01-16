@@ -465,6 +465,7 @@ fun_help: |
     ❂ /blue <text>: bluify teks Anda!
     ❂ /latin <text>: latinkan teks Anda!
     ❂ /lined <text>: melapisi teks Anda!
+    ❂ /cilik <text>: merubah menjadi cilik teks!
 greetings_help: |
     ──「 Salam Pembuka 」──
 
@@ -662,9 +663,9 @@ search_help: |
     ❂ /github <username>*:* Dapatkan informasi tentang pengguna GitHub.
     ❂ /country <nama negara>*:* Mengumpulkan info tentang negara tertentu
     ❂ /imdb <Nama film>*:* Dapatkan info lengkap tentang film dengan imdb.com
-    ❂ Cilik <query>*:* Siesta menjawab pertanyaan
+    ❂ Cilik <query>*:* Cilik menjawab pertanyaan
 
-    💡 Contoh : `Siesta di mana Jepang?`
+    💡 Contoh : `Cilik di mana Jepang?`
 stickers_help: |
     ──「 Stiker 」──
 
@@ -682,7 +683,10 @@ tools_help: |
 
     *Bot Info Sangmata*
     ❂ /sg <reply>*:* Untuk memeriksa nama riwayat
-
+    
+    *Laporan Bug*
+    ❂ /bug <reason> : Melapor Bug Pada Bot.
+    
     *Tanggal-waktu-Cuaca*
     ❂ /time <kode negara>*:* Memberikan informasi tentang zona waktu.
     ❂ /weather <city>*:* Dapatkan info cuaca di tempat tertentu.
