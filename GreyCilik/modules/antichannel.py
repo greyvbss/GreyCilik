@@ -4,7 +4,7 @@ from telegram.ext.filters import Filters
 from telegram import Update, message, ParseMode
 from telegram.ext import CallbackContext
 
-from GreyCilik.modules.helper_funcs.decorators import siestacmd, siestamsg
+from GreyCilik.modules.helper_funcs.decorators import Greycmd, Greymsg
 from GreyCilik.modules.helper_funcs.channel_mode import user_admin, AdminPerms
 from GreyCilik.modules.sql.antichannel_sql import antichannel_status, disable_antichannel, enable_antichannel
 from GreyCilik.modules.language import gs
