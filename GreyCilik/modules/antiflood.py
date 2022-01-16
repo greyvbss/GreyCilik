@@ -26,6 +26,7 @@ from GreyCilik.modules.helper_funcs.string_handling import extract_time
 from GreyCilik.modules.connection import connected
 from GreyCilik.modules.helper_funcs.alternate import send_message
 from GreyCilik.modules.sql.approve_sql import is_approved
+from GreyCilik.modules.language import gs
 
 FLOOD_GROUP = 3
 
@@ -291,8 +292,8 @@ def set_flood_mode(update, context):
     if conn:
         chat = dispatcher.bot.getChat(conn)
         chat_id = conn
-        chat_name = dispatcher.bot.getChat(conn).title
     else:
+        chat_name = dispatcher.bot.getChat(conn).title
         if update.effective_message.chat.type == "private":
             send_message(
                 update.effective_message,
@@ -396,6 +397,9 @@ def __chat_settings__(chat_id, user_id):
     if limit == 0:
         return "Not enforcing to flood control."
     return "Antiflood has been set to`{}`.".format(limit)
+
+def helps(chat):
+    return gs(chat, "antiflood_help")
 
 __mod_name__ = "Anti-Flood"
 
