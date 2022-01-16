@@ -604,6 +604,11 @@ musicplayer_help: |
     ──「 Musicplayer 」──
 
     Help Music can access with different command and support dashboard help and setting.
+    ❂ /play <song title> - to play the song
+    ❂ /end - to stop the music
+    ❂ /vplay <movie title/input movie link> - to play video/stream
+    ❂ /vstop - to stop the video/stream
+    ❂ /lyrics <song title> - to search for song lyrics
     ❂ /mhelp - for help music module
     ❂ /msettings - for setting music module
 
@@ -658,9 +663,9 @@ search_help: |
     ❂ /github <username>*:* Get information about a GitHub user.
     ❂ /country <country name>*:* Gathering info about given country
     ❂ /imdb <Movie name>*:* Get full info about a movie with imdb.com
-    ❂ Siesta <query>*:* Siesta answers the query
+    ❂ Cilik <query>*:* Cilik answers the query
 
-    💡 Ex : `Siesta where is Japan?`
+    💡 Ex : `Cilik where is Japan?`
 stickers_help: |
     ──「 Stickers 」──
 
@@ -678,6 +683,9 @@ tools_help: |
 
     *Sangmata Info bot*
     ❂ /sg <reply>*:* To check history name
+
+    *Bug Report*
+    ❂ /bug <reason> : report bugs on bot
 
     *Date-time-Weather*
     ❂ /time <country code>*:* Gives information about a timezone.
@@ -709,6 +717,7 @@ tools_help: |
 
     Tagger
     ❂ /tagall : for tag everyone at least 100 member first.
+    ❂ /all <query> : to tag all members
 translator_help: |
     ──「 Translator 」──
 
